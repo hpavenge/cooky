@@ -1,13 +1,16 @@
 import React from 'react'
-import Link  from 'next/link'
+import Link from 'next/link'
+import Image from 'next/image'
 
-function RecipeCard({recipe}) {
-    const{title, slug, cookingTime, thumbnail} =recipe.fields
+function RecipeCard({ recipe }) {
+    const { title, slug, cookingTime, thumbnail } = recipe.fields
 
     return (
-        <div classname="card">
+        <div className="card">
             <div className="featured">
-
+                <Image src={'https:' + thumbnail.fields.file.url}
+                    width={thumbnail.fields.file.details.image.width}
+                    height={thumbnail.fields.file.details.image.height} />
             </div>
             <div className="content">
                 <div className="info">
